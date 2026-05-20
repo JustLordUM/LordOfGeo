@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LordOfGeo</title>
+
+  <link rel="stylesheet" href="Style.css">
+  <link rel="icon" type="image/png" href="LordOfGeo.png">
+</head>
+<body>
+
+ <!-- MENU -->
+<section class="screen active" id="menuScreen">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+<div class="logo">
+
+  <img
+    src="LordOfGeo.png"
+    alt="LordOfGeo Logo"
+    class="logo-img"
+  >
+
+  <span>
+    LordOfGeo
+  </span>
+
+</div>
+
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <h1>
+      Elije tu desafío
+    </h1>
+
+    <p>
+      Aprende países, banderas y capitales
+      explorando cada rincón del mundo.
+    </p>
+
+  </div>
+
+  <!-- REGIONES -->
+
+  <div class="region-section">
+
+    <button
+      class="region-btn america"
+      onclick="startGame('america')"
+    >
+      🌎 América
+    </button>
+
+    <div class="region-carousel">
+
+      <img src="Buenos Aires.jpeg">
+      <img src="Perú.jpg">
+      <img src="Costa Rica.jpg">
+      <img src="Brasil.jpg">
+      <img src="Venezuela.jpg">
+
+    </div>
+
+  </div>
+
+  <div class="region-section">
+
+    <button
+      class="region-btn europa"
+      onclick="startGame('europa')"
+    >
+      🏰 Europa
+    </button>
+
+    <div class="region-carousel">
+
+      <img src="Noruega.jpg">
+      <img src="Italia.jpg">
+      <img src="Alemania.jpg">
+      <img src="Francia.jpg">
+      <img src="España.jpg">
+
+    </div>
+
+  </div>
+
+  <div class="region-section">
+
+    <button
+      class="region-btn asia"
+      onclick="startGame('asiayoceania')"
+    >
+      🌏 Asia + Oceanía
+    </button>
+
+    <div class="region-carousel">
+
+      <img src="Seúl.avif">
+      <img src="Sidney.webp">
+      <img src="Tokyo.avif">
+      <img src="China.jpg">
+      <img src="Polinesia.jpg">
+
+    </div>
+
+  </div>
+
+  <div class="region-section">
+
+    <button
+      class="region-btn africa"
+      onclick="startGame('africa')"
+    >
+      🦁 África
+    </button>
+
+    <div class="region-carousel">
+
+      <img src="Madagascar.jpg">
+      <img src="Bali.jpg">
+      <img src="Egipto.webp">
+      <img src="Playa.jpg">
+      <img src="Palacio.jpg">
+
+    </div>
+
+  </div>
+
+  <div class="region-section">
+
+    <button
+      class="region-btn world"
+      onclick="startGame('world')"
+    >
+      🔥 World Challenge
+    </button>
+
+    <div class="region-carousel">
+
+      <img src="Toree.jpg">
+      <img src="Dama.jpg">
+      <img src="Obelisco.jpg">
+      <img src="TT.jpg">
+      <img src="Arco.jpg">
+
+    </div>
+
+  </div>
+<div class="top-bar">
+
+  <button
+    class="menu-back"
+    onclick="backMenu()"
+  >
+    ⬅ Menú
+  </button>
+
+  <div id="regionTitle"></div>
+
+  <div id="score">
+    ⭐ 0
+  </div>
+
+</div>
+
+</section>
+
+  <!-- GAME -->
+  <section class="screen" id="gameScreen">
+
+    <div class="glass game-card">
+
+      <div class="top-bar">
+
+        <div id="regionTitle"></div>
+
+        <div id="score">
+          ⭐ 0
+        </div>
+
+      </div>
+
+      <div class="progress-container">
+        <div id="progressBar"></div>
+      </div>
+
+      <img id="flag" src="" alt="Bandera">
+
+      <div class="inputs">
+
+        <input
+          type="text"
+          id="countryInput"
+          placeholder="Nombre del país"
+        >
+
+        <input
+          type="text"
+          id="capitalInput"
+          placeholder="Capital"
+        >
+
+      </div>
+
+<div class="buttons">
+
+  <button class="list-btn" onclick="toggleList()">
+    📋 Lista
+  </button>
+
+  <button class="confirm" onclick="checkAnswer()">
+    Confirmar
+  </button>
+
+  <button class="skip" onclick="skipCountry()">
+    Pasapaís
+  </button>
+
+</div>
+
+<div id="countryList" class="country-list hidden"></div>
+
+      <div id="message"></div>
+
+      <div class="bottom-info">
+
+        <div id="counter"></div>
+
+        <div id="timer">
+          ⏱ 0s
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FINISH -->
+  <section class="screen" id="finishScreen">
+
+    <div class="glass finish-card">
+
+      <h2>🎉 Completado</h2>
+
+      <p id="finalScore"></p>
+
+      <button onclick="backMenu()">
+        Volver al menú
+      </button>
+
+    </div>
+
+  </section>
+
+  <script src="countries.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
